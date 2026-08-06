@@ -1,14 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
+import Hello from './component/Hello';
 
 function App() {
-  let name = 'Jyoti'
+  let name = 'Jyoti';
   return (
-    <div className='border'>
-      <h2>Hello {name}</h2>
-      <p>This is first Para</p>
-    </div>
+    <>
+      <Hello name={name} />
+    </>
   );
 }
 
