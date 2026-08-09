@@ -94,10 +94,37 @@ h2 {
 }
 
 
-.blue-text{
-    color:#137fd0;
+.blue-text {
+  color: #137fd0;
 }
 
-.blue-border{
-    border: 2px solid #137fd0;
+.blue-border {
+  border: 2px solid #137fd0;
+}
+
+.title {
+  text-transform: capitalize;
+}
+
+.green-text {
+  color: #22b147;
+}
+
+.green-border {
+  border: 2px solid #22b147;
+}
+
+.purpal-text {
+  color: #693e9e;
+}
+
+.purpal-border {
+  border: 2px solid #693e9e;
+}
+
+.div-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
