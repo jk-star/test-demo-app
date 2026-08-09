@@ -2,9 +2,13 @@ import './App.css';
 import React from 'react';
 import Hello from './component/Hello';
 import PersonalProfile from './component/PersonalProfile';
+import StudentCard from './component/StudentCard';
 
 function App() {
   let name = 'Jyoti';
+
+  let studentName ="Priti Singh";
+  let studentAge =22;
 
   const skills = [
     {
@@ -35,6 +39,7 @@ function App() {
     <>
       <Hello name={name} />
       <PersonalProfile skills={skills} profile={profile} />
+      <StudentCard name = {studentName} age={studentAge}/>
     </>
   );
 }

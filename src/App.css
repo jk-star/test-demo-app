@@ -92,3 +92,12 @@ h2 {
   color: #2b5ea6;
   font-size: 20px;
 }
+
+
+.blue-text{
+    color:#137fd0;
+}
+
+.blue-border{
+    border: 2px solid #137fd0;
+}
