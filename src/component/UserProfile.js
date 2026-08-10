@@ -1,59 +1,64 @@
-import { useState } from "react";
+import '../css/UserProfile.css';
+
 import FlexBox from "./css-component/flexBox";
+
+import { useState } from "react";
+
 const UserProfile = () => {
-    const [name, setName] = useState("Priti");
-    const [city, setCity] = useState("");
-    const [age, setAge] = useState(0);
-
-    function handleSubmit(e) {
-        e.preventDefault();
-
-        const formData = {
-            name,
-            city,
-            age
-        };
-
-        console.log(formData);
-    }
-
+    const [name, setName] = useState("");
     return (
-        <div className="profile">
-            <FlexBox>
-                <span>Name: {name}</span>
-                <input
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                />
-            </FlexBox>
-            <FlexBox>
-                <span>Age: {age}</span>
-                <button onClick={() => setAge(age + 1)}>+</button>
-                <button onClick={() =>
-                    setAge(age => (age > 0 ? age - 1 : 0))
-                }>-</button>
-            </FlexBox>
-            <FlexBox>
-                <span>City: {city}</span>
-                <input
-                    type="text"
-                    placeholder="Enter your name"
-                    value={city}
-                    onChange={(e) => { setCity(e.target.value) }}
-                />
-            </FlexBox>
-
-            <FlexBox>
-                <form onSubmit={handleSubmit}>
+        <div className=''>
+            <div className='user-card-header'>
+                <FlexBox>
+                    <span><i className="text-blue-500 fa-solid fa-circle-user text-3xl font-bold"></i></span>
+                    <span className='text-4xl font-bold'>user profile editor</span>
+                </FlexBox>
+                <p className=' text-center'>Update your profile information and save your changes.</p>
+            </div>
+            <div className='profile-update-wrap'>
+                <div className='flex justify-between'>
+                    <div className='flex gap-4'>
+                        <div className=''>
+                            <i className="fa-solid fa-user"></i>
+                        </div>
+                        <div className='flex flex-col'>
+                            <span className='font-bold'>Name</span>
+                            <span>Your full name</span>
+                        </div>
+                    </div>
+                    <input
+                        className='w-100 border-1 border-solid rounded-md pl-3 pr-3'
+                        type="text"
+                        placeholder='Enter your name'
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                    />
                     <button>
-                        Save
+                        <span><i className="fa-solid fa-pen"></i></span>
+                        <span>Edit Name</span>
                     </button>
-                </form>
-            </FlexBox>
-
+                </div>
+                <div className='age'>
+                    <div className=''>
+                        <i className="fa-solid fa-calendar-days"></i>
+                    </div>
+                    <div className=''>
+                        <span className='font-bold'>Age</span>
+                        <span>age in years</span>
+                    </div>
+                </div>
+                <div className='flex gap-4'>
+                    <div className='bg-sky-500/20 rounded-md flex p-4'>
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div className='flex flex-col'>
+                        <span className='font-bold'>City</span>
+                        <span>Your current city</span>
+                    </div>
+                </div>
+            </div>
         </div>
     );
-
 }
+
 export default UserProfile;
