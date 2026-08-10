@@ -1,4 +1,4 @@
-import Card from './Card';
+import Card from './css-component/Card';
 const StudentCard = ({name, age}) => {
     return (
         <Card className='blue-border'>

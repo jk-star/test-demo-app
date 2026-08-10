@@ -1,5 +1,5 @@
 const PersonalProfile = ({ skills, profile }) => {
-    console.log(skills);
+    // console.log(skills);
     return (
         <div className="card">
             <div className="card-header">My Profile</div>

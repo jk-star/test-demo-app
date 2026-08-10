@@ -1,4 +1,4 @@
-import Card from './Card';
+import Card from './css-component/Card';
 const ProductCard = ({name, price}) => {
     return(
         <Card className='purpal-border'>

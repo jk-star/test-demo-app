@@ -5,6 +5,7 @@ import PersonalProfile from './component/PersonalProfile';
 import StudentCard from './component/StudentCard';
 import CourseCard from './component/CourseCard';
 import ProductCard from './component/ProductCard';
+import UserProfile from './component/UserProfile';
 
 function App() {
   let name = 'Jyoti';
@@ -52,6 +53,7 @@ function App() {
         <CourseCard name = {courseName} duration={duration}/>
         <ProductCard name= {product} price={price} />
       </div>
+      <UserProfile/>
     </>
   );
 }

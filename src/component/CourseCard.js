@@ -1,4 +1,4 @@
-import Card from './Card';
+import Card from './css-component/Card';
 const CourseCard = ({name, duration}) => {
     return(
         <Card className='green-border'>
