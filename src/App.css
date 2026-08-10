@@ -4,13 +4,13 @@
   margin: 10px;
 }
 
-.card {
+.personal-profile.card {
   width: 80%;
   margin: 0 auto;
 }
 
-.card-footer,
-.card-header {
+.personal-profile .card-footer,
+.personal-profile .card-header {
   background-color: #2b5ea6;
   color: white;
   text-align: center;
@@ -19,17 +19,17 @@
   text-transform: capitalize;
 }
 
-.card-header {
+.personal-profile .card-header {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
 
-.card-footer {
+.personal-profile .card-footer {
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
 
-.card-body-img-wrap {
+.personal-profile .card-body-img-wrap {
   display: flex;
   align-items: center;
   justify-content: center;
