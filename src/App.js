@@ -9,6 +9,7 @@ import UserProfile from './component/UserProfile';
 import ShoppingCart from './component/ShoppingCart';
 import Login from './component/Login';
 import PageVisitCounter from './component/PageVisitCounter';
+import SearchLogger from './component/SearchLogger';
 
 function App() {
   let name = 'Jyoti';
@@ -60,6 +61,7 @@ function App() {
       <ShoppingCart />
       <Login />
       <PageVisitCounter />
+      <SearchLogger />
     </>
   );
 }
