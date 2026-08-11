@@ -1,3 +1,21 @@
+.save-btn {
+    background-color: #6538dd;
+    color: #fff;
+    padding: 12px 50px;
+    margin: 10px auto;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    text-transform: capitalize;
+}
+
+.save-btn:hover {
+    background-color: #6538dd;
+    color: #fff;
+}
+
 .parpul {
     color: #5423e0;
 }
@@ -32,10 +50,91 @@
 }
 
 .edit-name {
-    background: #f3effd;
     padding: 16px 40px;
+    background: #f3effd;
     border: 1px solid #5423e0;
     display: flex;
     align-items: center;
     gap: 15px;
+    width: 100%;
+}
+
+.edit-name:hover {
+    background: #f3effd;
+    border: 1px solid #5423e0;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.green-bg {
+    background-color: #eef7ef;
+}
+
+.blue-bg {
+    background-color: #f0f6fd;
+}
+
+.save-btn-bg {
+    background-color: #f9f7fd;
+    padding: 30px 0px;
+}
+
+
+.counter {
+    width: 270px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #e1e5e9;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.counter-btn {
+    width: 60px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 400;
+    cursor: pointer;
+    user-select: none;
+}
+
+.minus {
+    color: #e53935;
+    border-right: 1px solid #e1e5e9;
+}
+
+.plus {
+    color: #16a34a;
+    border-left: 1px solid #e1e5e9;
+}
+
+.counter-value {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #202124;
+}
+
+.profile-data-wrap {
+    background-color: #f2f8fd;
+    padding: 30px 20px;
+}
+
+.profile-data-text {
+    color: #0751a3;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: bold;
 }
