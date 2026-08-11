@@ -8,6 +8,7 @@ import ProductCard from './component/ProductCard';
 import UserProfile from './component/UserProfile';
 import ShoppingCart from './component/ShoppingCart';
 import Login from './component/Login';
+import PageVisitCounter from './component/PageVisitCounter';
 
 function App() {
   let name = 'Jyoti';
@@ -58,6 +59,7 @@ function App() {
       <UserProfile />
       <ShoppingCart />
       <Login />
+      <PageVisitCounter />
     </>
   );
 }
