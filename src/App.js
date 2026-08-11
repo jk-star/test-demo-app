@@ -11,6 +11,7 @@ import Login from './component/Login';
 import PageVisitCounter from './component/PageVisitCounter';
 import SearchLogger from './component/SearchLogger';
 import DocumentTitleUpdater from './component/DocumentTitleUpdater';
+import Timer from './component/Timer';
 
 function App() {
   let name = 'Jyoti';
@@ -64,6 +65,7 @@ function App() {
       <PageVisitCounter />
       <SearchLogger />
       <DocumentTitleUpdater />
+      <Timer />
     </>
   );
 }
