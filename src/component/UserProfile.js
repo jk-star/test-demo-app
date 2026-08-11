@@ -8,6 +8,23 @@ const UserProfile = () => {
     const [name, setName] = useState("Priti");
     const [city, setCity] = useState("");
     const [age, setAge] = useState(0);
+    const [savedData, setSavedData] = useState(null);
+
+    function handleSubmit(e) {
+        e.preventDefault();
+
+        const formData = {
+            name,
+            city,
+            age
+        };
+
+        setSavedData(formData);
+
+    }
+
+
+
     return (
 
         <div className='container'>
@@ -89,23 +106,42 @@ const UserProfile = () => {
                                 </div>
                             </div>
                             <div className='card save-btn-bg'>
-                                <button className='save-btn btn'>
-                                    <span><i className="fa-regular fa-floppy-disk"></i></span>
-                                    <span className='save-btn-text'>save profile</span>
-                                </button>
+                                <form onSubmit={handleSubmit}>
+                                    <button className='save-btn btn'>
+                                        <span><i className="fa-regular fa-floppy-disk"></i></span>
+                                        <span className='save-btn-text' >save profile</span>
+                                    </button>
+                                </form>
                                 <p className='text-center fs-4'>Click to save profile information</p>
                             </div>
                         </div>
                         <div className='card profile-data-wrap'>
                             <div className='profile-data-text'>
-                                <span><i class="fa-solid fa-circle-info"></i></span>
+                                <span><i className="fa-solid fa-circle-info"></i></span>
                                 <span>profile data</span>
+                            </div>
+                            <div className='formData'>
+                                {savedData && (
+                                    <>
+                                        <p>
+                                            <strong>Name:</strong> {savedData.name}
+                                        </p>
+
+                                        <p>
+                                            <strong>City:</strong> {savedData.city}
+                                        </p>
+
+                                        <p>
+                                            <strong>Age:</strong> {savedData.age}
+                                        </p>
+                                    </>
+                                )}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
 
