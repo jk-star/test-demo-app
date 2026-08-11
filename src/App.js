@@ -6,18 +6,19 @@ import StudentCard from './component/StudentCard';
 import CourseCard from './component/CourseCard';
 import ProductCard from './component/ProductCard';
 import UserProfile from './component/UserProfile';
+import ShoppingCart from './component/ShoppingCart';
 
 function App() {
   let name = 'Jyoti';
 
-  let studentName ="Priti Singh";
-  let studentAge =22;
+  let studentName = "Priti Singh";
+  let studentAge = 22;
 
-  let courseName ="React";
-  let duration ="3 Months";
+  let courseName = "React";
+  let duration = "3 Months";
 
-  let product ="Laptop";
-  let price ="50,000";
+  let product = "Laptop";
+  let price = "50,000";
 
   const skills = [
     {
@@ -49,11 +50,12 @@ function App() {
       <Hello name={name} />
       <PersonalProfile skills={skills} profile={profile} />
       <div className='div-wrapper'>
-        <StudentCard name = {studentName} age={studentAge}/>
-        <CourseCard name = {courseName} duration={duration}/>
-        <ProductCard name= {product} price={price} />
+        <StudentCard name={studentName} age={studentAge} />
+        <CourseCard name={courseName} duration={duration} />
+        <ProductCard name={product} price={price} />
       </div>
-      <UserProfile/>
+      <UserProfile />
+      <ShoppingCart />
     </>
   );
 }
