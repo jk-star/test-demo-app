@@ -5,7 +5,6 @@ const ShoppingCart = () => {
     const [appleQuantity, setappleQuantity] = useState(0);
     const [mangoQuantity, setmangoQuantity] = useState(0);
     const [orangeQuantity, setorangeQuantity] = useState(0);
-    const [totalAmount, settotalAmount] = useState(0);
 
     const products = [
         {
@@ -33,6 +32,10 @@ const ShoppingCart = () => {
             image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRrZXQtLG-S6N3LeSCvDVZLICiX9CFxKZq2LJiPgkb8zNGhepHacWP1X0&s=10"
         }
     ];
+
+    const totalAmount = products.reduce((total, product) => {
+        return total + (product.price * product.quantity);
+    }, 0);
 
     return (
         <div className="container-fluid bg-light min-vh-100 py-4">
