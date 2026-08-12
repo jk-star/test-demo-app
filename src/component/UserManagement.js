@@ -4,6 +4,8 @@ const UserManagement = () => {
     const [users, setUsers] = useState([]);
     const [userCount, setUserCount] = useState(0);
 
+    const [deleteId, setDeleteId] = useState(null);
+
     // formlist
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -13,6 +15,8 @@ const UserManagement = () => {
         name: name,
         email: email
     };
+
+    //user add and display user
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -29,7 +33,12 @@ const UserManagement = () => {
         setEmail("");
     }
 
-    // console.log(users);
+    // user delete
+
+    const handleDelete = (id) => {
+        setUsers(users.filter(user => user.id !== id));
+        setDeleteId(null);
+    };
 
     return (
         <div className="container-fluid bg-light min-vh-100 py-4">
@@ -225,7 +234,10 @@ const UserManagement = () => {
                                                             <i className="fa-solid fa-pen"></i>
                                                         </button>
 
-                                                        <button className="btn btn-outline-danger">
+                                                        <button
+                                                            className="btn btn-outline-danger"
+                                                            onClick={() => setDeleteId(user.id)}
+                                                        >
                                                             <i className="fa-solid fa-trash"></i>
                                                         </button>
 
@@ -240,6 +252,32 @@ const UserManagement = () => {
                                         </tbody>
 
                                     </table>
+
+                                    {deleteId && (
+                                        <div className="alert alert-danger d-flex justify-content-between align-items-center mt-3">
+
+                                            <span className="fw-semibold">
+                                                Are you sure you want to delete this user?
+                                            </span>
+
+                                            <div>
+                                                <button
+                                                    className="btn btn-secondary me-2"
+                                                    onClick={() => setDeleteId(null)}
+                                                >
+                                                    Cancel
+                                                </button>
+
+                                                <button
+                                                    className="btn btn-danger"
+                                                    onClick={() => handleDelete(deleteId)}
+                                                >
+                                                    Yes, Delete
+                                                </button>
+                                            </div>
+
+                                        </div>
+                                    )}
 
                                 </div>
 
