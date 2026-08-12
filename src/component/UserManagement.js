@@ -10,6 +10,8 @@ const UserManagement = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
 
+    const [editId, setEditId] = useState(null);
+
     const newUser = {
         id: Date.now(),
         name: name,
@@ -20,17 +22,36 @@ const UserManagement = () => {
 
     function handleSubmit(e) {
         e.preventDefault();
-        if (name === "" || email === "") {
-            alert("Please fill all fields");
-            return;
+
+        if (editId) {
+
+            setUsers(
+                users.map(user =>
+                    user.id === editId
+                        ? {
+                            ...user,
+                            name: name,
+                            email: email
+                        }
+                        : user
+                )
+            );
+
+            setEditId(null);
+        } else {
+
+            if (name === "" || email === "") {
+                alert("Please fill all fields");
+                return;
+            }
+
+            setUsers([...users, newUser]);
+
+            setUserCount(count => count + 1);
+
+            setName("");
+            setEmail("");
         }
-
-        setUsers([...users, newUser]);
-
-        setUserCount(count => count + 1);
-
-        setName("");
-        setEmail("");
     }
 
     // user delete
@@ -38,6 +59,18 @@ const UserManagement = () => {
     const handleDelete = (id) => {
         setUsers(users.filter(user => user.id !== id));
         setDeleteId(null);
+    };
+
+    //edit user
+
+    const handleEdit = (id) => {
+        const user = users.find(user => user.id === id);
+
+        if (user) {
+            setName(user.name);
+            setEmail(user.email);
+            setEditId(id);
+        }
     };
 
     return (
@@ -230,7 +263,8 @@ const UserManagement = () => {
 
                                                     <td className="text-center">
 
-                                                        <button className="btn btn-outline-primary me-2">
+                                                        <button className="btn btn-outline-primary me-2"
+                                                            onClick={() => handleEdit(user.id)} >
                                                             <i className="fa-solid fa-pen"></i>
                                                         </button>
 
