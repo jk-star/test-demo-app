@@ -12,6 +12,7 @@ import PageVisitCounter from './component/PageVisitCounter';
 import SearchLogger from './component/SearchLogger';
 import DocumentTitleUpdater from './component/DocumentTitleUpdater';
 import Timer from './component/Timer';
+import UserManagement from './component/UserManagement';
 
 function App() {
   let name = 'Jyoti';
@@ -66,6 +67,7 @@ function App() {
       <SearchLogger />
       <DocumentTitleUpdater />
       <Timer />
+      <UserManagement />
     </>
   );
 }
